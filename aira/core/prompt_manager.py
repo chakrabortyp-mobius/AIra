@@ -31,4 +31,4 @@ class PromptManager:
             input_variables=["question"],
             template=template
         )
-    # add more templetes later
+    # we will add more templetes later

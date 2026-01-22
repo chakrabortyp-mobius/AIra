@@ -62,6 +62,10 @@ AIra/
 * from pathlib import Path --> Imports a modern way to handle filesystem paths (better than strings).
 * BASE_DIR = Path(__file__).parent.parent --> goes two levels back from the current script
 * MODEL_DIR.mkdir(exist_ok=True, parents=True) --> parents=True makes sure the the parents dir exist
+* we use @staticmethod inside class for any method in the class so that when we can use the 
+  method directly withiout making any object from the class. it does not take self as a inut inside
+  class, so it cannot interact with other methods or attributes inside class.
+  e.g.--> prompt = PromptManager.get_basic_chat_prompt()
 * What do you mean by prompt abstraction?
   In AIra, prompts are treated as first-class components—defined independently from model 
   inference and orchestrated via LangChain PromptTemplates—so they can evolve with RAG, 
@@ -81,3 +85,16 @@ our current position(sha id: b1d656d-->we are getting hellusinated and unstructu
     1. we are using Qwen/Qwen3-0.6B which is a text generation model
     2. raw inference, model don't know when to stop
     Raw inference ≠ Production inference
+
+
+our current position(sha id: d67d6a0-->we are getting proper output with <think> as we are using
+                    the template on which the qwen was trained on)
+    Tokenizer-aware LLM abstraction
+        ↓
+    Qwen-native chat prompt alignment
+        ↓
+    LangChain BasicChain orchestration
+        ↓
+    EOS-driven bounded generation
+        ↓
+    Clean, deterministic responses
