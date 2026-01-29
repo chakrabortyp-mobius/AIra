@@ -122,6 +122,22 @@ our current position(sha id: d67d6a0-->we are getting proper output with <think>
 
 
 
-##### STEP-2 ######
+
  
     *currently our model is CLI(commad line interface) only
+    * dependencies.py (ask why we need this)
+        Later you can:
+            Cache the model
+            Swap models
+            Add RAG chains
+            Mock in tests
+
+
+##### STEP-3 ######
+    RAG plan
+        Hybrid Search                       Week 4
+        Re-ranking                          Week 4
+        Query Decomposition                 Week 5
+        HyDE                                Week 5
+        Parent Retrieval                    Week 3
+        Self-Querying                       Week 6

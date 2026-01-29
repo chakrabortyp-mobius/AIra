@@ -8,3 +8,4 @@ loguru==0.6.0          #for better logging
 fastapi==0.110.0
 uvicorn==0.27.1
 pydantic>=1.10.0,<2.0.0
+pydantic-settings

@@ -19,6 +19,7 @@
 
 from fastapi import FastAPI
 from aira.api.chat import router as chat_router
+from aira.api.health import router as health_router
 
 app = FastAPI(
     title="AIra",
@@ -27,4 +28,6 @@ app = FastAPI(
 )
 
 
-app.include_router(chat_router)
+#app.include_router(chat_router)
+app.include_router(chat_router, prefix="/api/v1")
+app.include_router(health_router)
