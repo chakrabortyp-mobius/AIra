@@ -55,7 +55,14 @@ AIra/
 ├── requirements.txt
 └── pyproject.toml
 
-
+=========================================================
+Layer	                Responsibility                  |
+------                 ----------------                 |
+LLM	                    Generate text                   |
+Chain	                How to answer                   |
+RAG	                    Retrieve + answer               |
+Agent	                Decide which chain to use       |
+=========================================================
 
 - [x] Week 1: Core LLM Inference & Modular Architecture 
 - [ ] Week 2: FastAPI-based Serving Layer(main.py should not call the llm directly)
@@ -141,3 +148,11 @@ our current position(sha id: d67d6a0-->we are getting proper output with <think>
         HyDE                                Week 5
         Parent Retrieval                    Week 3
         Self-Querying                       Week 6
+
+    *in rag we keep the model for emmbeding model to be small unlike the main llm model
+    🔜 Next step (choose one — ONE at a time) 
+    1️⃣ PDF ingestion pipeline (PyPDFLoader → chunk → FAISS) 
+    2️⃣ BM25 + Hybrid Search 
+    3️⃣ DVC setup for RAG datasets 
+    4️⃣ RAG evaluation hooks
+

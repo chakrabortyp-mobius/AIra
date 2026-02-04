@@ -1,7 +1,7 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 from loguru import logger
-from langchain.llms import HuggingFacePipeline
+from langchain_community.llms import HuggingFacePipeline
 from transformers import pipeline
 from .config import MODEL_NAME, DEVICE, MAX_TOKENS, TEMPERATURE, TOP_P
 

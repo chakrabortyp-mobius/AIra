@@ -8,6 +8,9 @@ MAX_TOKENS = 512
 TEMPERATURE = 0.7   #0 = deterministic, 1 = very creative.
 TOP_P = 0.6       # 0.1 more determinastic, 0.9 = more creative.
 
+# Embeddings
+EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2" # HuggingFace model sentence transformer
+
 
 # paths
 BASE_DIR = Path(__file__).parent.parent
@@ -15,3 +18,11 @@ MODEL_DIR = BASE_DIR / "models"
 
 # Ensure model directory exists
 MODEL_DIR.mkdir(exist_ok=True, parents=True)
+
+# RAG Chunking Configuration
+CHUNK_SIZE = 1000
+CHUNK_OVERLAP = 150
+
+# FAISS Index path
+FAISS_INDEX_PATH = "data/faiss"
+RAG_DOC = "/home/gaian/Desktop/MLOPs/rag"
