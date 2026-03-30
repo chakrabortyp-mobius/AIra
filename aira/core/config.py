@@ -20,9 +20,17 @@ MODEL_DIR = BASE_DIR / "models"
 MODEL_DIR.mkdir(exist_ok=True, parents=True)
 
 # RAG Chunking Configuration
-CHUNK_SIZE = 1000
-CHUNK_OVERLAP = 150
+SEMANTIC_CHUNK_MIN_SIZE = 500       
+SEMANTIC_CHUNK_MAX_SIZE = 1500      
+SEMANTIC_BREAKPOINT_THRESHOLD = 0.75  
 
 # FAISS Index path
 FAISS_INDEX_PATH = "data/faiss"
 RAG_DOC = "/home/gaian/Desktop/MLOPs/rag"
+
+# Reranker
+RERANKER_MODEL_NAME = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+RERANKER_TOP_K = 5       # final docs passed to LLM after reranking
+
+# Retrieval (increase coarse fetch so reranker has more to work with)
+RETRIEVER_TOP_K = 20     # initial FAISS fetch before reranking

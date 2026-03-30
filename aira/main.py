@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from aira.api.chat import router as chat_router
 from aira.api.rag import router as rag_router
 from aira.api.health import router as health_router
+from aira.api.rerank import router as rerank_router  
 
 app = FastAPI(
     title="AIra",
@@ -12,3 +13,4 @@ app = FastAPI(
 app.include_router(chat_router ) #, prefix="/api/v1")
 app.include_router(rag_router ) #, prefix="/api/v1")
 app.include_router(health_router ) #, prefix="/api/v1")
+app.include_router(rerank_router)  

@@ -1,3 +1,5 @@
+# rag_chain.py
+
 from langchain.chains import LLMChain
 from aira.core.prompt_manager import PromptManager
 from typing import List
@@ -22,7 +24,12 @@ class RAGChain:
         """
         return "\n\n".join(doc.page_content for doc in documents)
 
-    def clean(self, text: str) -> str:
+    def clean(self, response) -> str:
+
+        text = response.get("text") 
+
+
+
         text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL)
 
         tokens_to_remove = [
@@ -40,9 +47,12 @@ class RAGChain:
     def run(self, question: str, documents: List[Document]) -> str:
         context = self._format_context(documents)
 
-        response = self.chain.run(
-            context=context,
-            question=question
+        #response = self.chain.run(
+        #     context=context,
+        #     question=question
+        # )
+        response = self.chain.invoke(
+            {"context": context, "question": question}
         )
 
         return self.clean(response)
