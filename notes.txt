@@ -1,59 +1,47 @@
 AIra/
 │
 ├── aira/
-│   ├── main.py              # FastAPI entry
+│   ├── main.py             
+|   ├── test_loader.py  
+|   ├── build_faiss.py  
 │   ├── api/
 │   │   ├── chat.py
 │   │   ├── rag.py
-│   │   └── agent.py
+│   │   ├── health.py
+│   │   ├── documents.py
+│   │   └── rerank.py
 │   │
 │   ├── core/
 │   │   ├── llm_loader.py
-│   │   ├── prompt_manager.py
-│   │   └── callbacks.py
+│   │   ├── config.py
+│   │   ├── dependencies.py
+│   │   └── prompt_manager.py
 │   │
 │   ├── chains/
 │   │   ├── basic_chain.py
 │   │   └── rag_chain.py
 │   │
-│   ├── agents/
-│   │   ├── base_agent.py
-│   │   └── tool_agent.py
+│   ├── rag/
+│   │   ├── bm25_retriever.py
+│   │   ├── embeddings.py
+│   │   ├── hybrid_reriever.py
+│   │   ├── kb_metadata.py
+│   │   ├── loader.py
+│   │   ├── reranker.py
+│   │   ├── retriever.py
+│   │   ├── semantic_chunker.py
+│   │   ├── summarizer.py
+│   │   ├── vectorstore.py
+│   │   └── document_loader.py
 │   │
 │   ├── tools/
-│   │   ├── search.py
-│   │   └── calculator.py
-│   │
-│   └── memory/
-│       └── conversation.py
+│       ├── calculator.py
+│       ├── search.py
+│       └── rag_tool.py
 │
-├── training/
-│   ├── lora_finetune.py
-│   ├── qlora_finetune.py
-│   └── configs/
-│
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── dvc.yaml
-│
-├── inference/
-│   ├── vllm_server.py
-│   └── client.py
-│
-├── mlflow/
-│
-├── docker/
-│   ├── Dockerfile
-│   └── docker-compose.yml
-│
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-│
-├── README.md
-├── requirements.txt
-└── pyproject.toml
+└── rag/
+
+
 
 =========================================================
 Layer	                Responsibility                  |

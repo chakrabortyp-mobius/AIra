@@ -37,7 +37,7 @@ class AIraModel:
             temperature=TEMPERATURE,
             top_p=TOP_P,
             do_sample=True,
-            repetition_penalty=1.2,
+            repetition_penalty=1.5,
             eos_token_id=self.tokenizer.eos_token_id,
             pad_token_id=self.tokenizer.pad_token_id,
         )
