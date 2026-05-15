@@ -3,8 +3,14 @@ AIra/
 ├── aira/
 │   ├── main.py             
 |   ├── test_loader.py  
-|   ├── build_faiss.py  
+|   ├── build_faiss.py
+│   │
+│   ├── agents/
+│   │   ├── base_agent.py
+│   │   ├── tool_agentpy
+│   │
 │   ├── api/
+│   │   ├── agent.py
 │   │   ├── chat.py
 │   │   ├── rag.py
 │   │   ├── health.py
@@ -39,8 +45,10 @@ AIra/
 │       ├── search.py
 │       └── rag_tool.py
 │
-└── rag/
-
+└── data/
+│   ├──faiss/
+│   ├──kb_metadata.json
+│   ├──uploads_metadata.json
 
 
 =========================================================
